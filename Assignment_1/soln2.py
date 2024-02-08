@@ -2,8 +2,8 @@ import vtk
 import argparse
 import os
 import faulthandler
-faulthandler.enable()
 
+faulthandler.enable()
 
 DATA_PATH = os.path.join("Data", "Isabel_3D.vti")
 
@@ -42,7 +42,7 @@ def solve(enable_phong_shading):
         volumeprop.SetSpecular(0.5)
         volumeprop.SetSpecularPower(10)
 
-    # volumeprop.SetInterpolationTypeToLinear()
+    volumeprop.SetInterpolationTypeToLinear()
 
     # Creating the volume Mapper
     volume_mapper = vtk.vtkSmartVolumeMapper()
