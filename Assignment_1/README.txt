@@ -1,13 +1,16 @@
 CS661 Assignment 1
 
+The 2D and 3D data used for the solutions are present under the \Data folder
+
 1. Question 1
 
 The given code extracts all the cells and vertices from the 2D scalar data of the Hurricane and extracts the contour based on 
 the isovalue provided by the user within a specified range, i.e (-1438, 630), thereby creating a PolyData object and storing it in as "isocontour.vtp" file in the same folder.
 The script also has a helper function that may be executed to render the polydata object in a black blackground. The code to run the script
-is mentioned below, where the user_input is the isovalue entered in the range (-1438, 630).
+is mentioned below, where the user_input is the isovalue entered in the range (-1438, 630) and whether he wants to render the 
+isocontours in the "visualize" argument
 
-> python3 soln1.py --isovalue <user_input>
+> python3 soln1.py --isovalue <user_input> --visualize <yes/no>
 
 2. Question 2
 

@@ -14,7 +14,20 @@ def solve(enable_phong_shading):
     reader.SetFileName(DATA_PATH)
     reader.Update()
     volume_data = reader.GetOutput()
+    
+    # creating an outline filter
+    outline_filter = vtk.vtkOutlineFilter()
+    outline_filter.SetInputData(volume_data)
 
+    # creating an outline filter mapper
+    outline_mapper = vtk.vtkPolyDataMapper()
+    outline_mapper.SetInputConnection(outline_filter.GetOutputPort())
+    
+    # creating the outline actor
+    outline_actor = vtk.vtkActor()
+    outline_actor.SetMapper(outline_mapper)
+    outline_actor.GetProperty().SetColor(1, 1, 1)
+    
     # initializing the color transfer function and opacity function
     tf = vtk.vtkColorTransferFunction()
     tf.AddRGBPoint(-4931.54, 0.0, 1.0, 1.0)
@@ -62,6 +75,7 @@ def solve(enable_phong_shading):
     render_window_interactor.SetInteractorStyle(vtk.vtkInteractorStyleTrackballCamera())
     render_window_interactor.SetRenderWindow(render_window)
     renderer.SetBackground(0.5, 0.5, 0.5)
+    renderer.AddActor(outline_actor)
     renderer.AddVolume(volume)
     render_window.Render()
     render_window_interactor.Start()

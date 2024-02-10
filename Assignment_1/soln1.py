@@ -98,11 +98,17 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser()
     parser.add_argument("--isovalue", type=float, default=0)
+    parser.add_argument("--visualize", type=str, default="no")
     args = parser.parse_args()
     isovalue = args.isovalue
+    visualize = args.visualize
 
+    # checking cases
     if isovalue >= -1438 and isovalue <= 630:
+        
         solve(isovalue)
-        visualize_polydata("isocontour.vtp")
+        if visualize == "yes":
+            visualize_polydata("isocontour.vtp")
+            
     else:
         print("Invalid Isovalue entered by the user!")
