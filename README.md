@@ -6,7 +6,7 @@ The assignment consists of two problems, the first one involving creation of the
 
 1. Question 1
 ```py
-$ python3 soln1.py --isovalue <user_input>
+$ python3 soln1.py --isovalue <user_input> --visualize <yes/no>
 ```
 
 2. Question 2
