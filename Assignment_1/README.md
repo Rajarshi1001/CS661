@@ -1,4 +1,4 @@
-CS661 Assignment 1
+## CS661 Assignment 1
 
 The 2D and 3D data used for the solutions are present under the \Data folder
 
@@ -10,7 +10,9 @@ The script also has a helper function that may be executed to render the polydat
 is mentioned below, where the user_input is the isovalue entered in the range (-1438, 630) and whether he wants to render the 
 isocontours in the "visualize" argument
 
+```bash
 > python3 soln1.py --isovalue <user_input> --visualize <yes/no>
+```
 
 2. Question 2
 
@@ -18,4 +20,6 @@ The given code renders a 3D scalar field volume data of a Hurricane with optiona
 write the line specifying "yes" to the phong argument to enable phong shading with the mentioned ambient, diffuse and specular values or "no"
 to disable phong shading.
 
+```bash
 > python3 soln2.py --phong <yes/no>
+```
